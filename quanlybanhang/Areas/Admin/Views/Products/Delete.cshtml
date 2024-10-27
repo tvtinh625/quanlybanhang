@@ -1,0 +1,23 @@
+﻿@model quanlybanhang.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<h2 class="bg-success">XÓA SẢN PHẨM</h2>
+
+<h3 class="bg-danger">Bạn có chắc chắn muốn xóa nó không?</h3>
+@Html.Partial("PVProdlnfo", Model)
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-8">
+            <input type="submit" value="Xóa" class="btn btn-primary " />
+            @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+}

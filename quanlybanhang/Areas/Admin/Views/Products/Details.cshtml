@@ -1,0 +1,25 @@
+﻿@model quanlybanhang.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Adminlayout.cshtml";
+}
+
+<head>
+    <style>
+        img {
+            height: 350px;
+            max-width: 350px;
+        }
+    </style>
+</head>
+<h2 class="bg-success">CHI TIẾT SẢN PHẨM</h2>
+
+@Html.Partial("PVProdlnfo", Model)
+<div class="form-group">
+    <div class="col-md-offset-4 col-md-8">
+
+        @Html.ActionLink("Cập nhật", "Edit", new { id = Model.ProductName }, new { @class = "btn btn-primary btn-sm" })
+        @Html.ActionLink("Quay lại danh sach", "Index", null, new { @class = "btn btn-primary btn-sm" })
+    </div>
+</div>
